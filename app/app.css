@@ -3,3 +3,7 @@
 h1 {
   text-align: center;
 }
+
+#results {
+  margin-top: 10px;
+}

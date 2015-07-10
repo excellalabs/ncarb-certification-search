@@ -7,12 +7,16 @@ angular.module('searchApp.search', ['ui.router'])
       .state('search', {
           url: '/',
           templateUrl: 'search/search.html',
-          controller: 'SearchCtrl'
+          controller: 'SearchCtrl as vm'
       });
 }])
 
-.controller('SearchCtrl', ['$scope', function($scope) {
-    $scope.submit = function() {
-        
+.controller('SearchCtrl', SearchController);
+
+function SearchController() {
+    var vm = this;
+
+    vm.submit = function() {
+
     }
-}]);
+}

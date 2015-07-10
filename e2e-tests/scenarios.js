@@ -5,22 +5,22 @@
 describe('search app', function() {
 
 
-  it('should automatically redirect to /search when location hash/fragment is empty', function() {
+  it('should automatically redirect to / when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/search");
+    expect(browser.getLocationAbsUrl()).toMatch("/");
   });
 
 
   describe('search', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/search');
+      browser.get('/');
     });
 
 
-    it('should render search when user navigates to /search', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/Certificate Search/);
+    it('should render search when user navigates to /', function() {
+      expect(element.all(by.css('[ng-view] h1')).first().getText()).
+        toMatch(/Certification Search/);
     });
 
   });
