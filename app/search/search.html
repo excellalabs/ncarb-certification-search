@@ -1,5 +1,31 @@
 <h1>Certificate Search</h1>
 
-<div class="row">
+<form class="form-horizontal" ng-submit="submit()">
+    <div class="form-group">
+        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="firstName" ng-model="filter.firstName"/>
+        </div>
 
-</div>
+        <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="lastName" ng-model="filter.lastName"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="city" class="col-sm-2 control-label">City</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="city" ng-model="filter.city"/>
+        </div>
+
+        <label for="state" class="col-sm-2 control-label">State</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="state" ng-model="filter.state"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+    </div>
+</form>

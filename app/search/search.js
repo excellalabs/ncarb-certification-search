@@ -11,6 +11,8 @@ angular.module('searchApp.search', ['ui.router'])
       });
 }])
 
-.controller('SearchCtrl', [function() {
-
+.controller('SearchCtrl', ['$scope', function($scope) {
+    $scope.submit = function() {
+        
+    }
 }]);
