@@ -2,9 +2,20 @@
 
 // Declare app level module which depends on views, and components
 angular.module('searchApp', [
-  'ngRoute',
+  'ui.router',
   'searchApp.search',
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/search'});
-}]);
+])
+
+.run(['$rootScope', '$state', '$stateParams',
+    function($rootScope, $state, $stateParams) {
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
+    }
+])
+
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    function($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true).hashPrefix('!');
+        $urlRouterProvider.otherwise('/');
+    }
+]);
