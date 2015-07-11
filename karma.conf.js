@@ -16,11 +16,11 @@ module.exports = function(config){
     ],
 
     preprocessors: {
-      'app/search/*.js': ['coverage', 'coveralls'],
-      'app/services/*.js': ['coverage', 'coveralls']
+      'app/search/*.js': ['coverage'],
+      'app/services/*.js': ['coverage']
     },
 
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'coverage', 'coveralls'],
 
     coverageReporter: {
       type: 'lcov',
