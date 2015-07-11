@@ -14,5 +14,8 @@
     "bootstrap": "~3.3.0",
     "html5-boilerplate": "~5.2.0",
     "ng-table": "~0.5.0"
+  },
+  "resolutions": {
+    "angular": "~1.4.0"
   }
 }
