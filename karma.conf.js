@@ -39,6 +39,7 @@ module.exports = function(config){
             'karma-jasmine',
             'karma-junit-reporter',
             'karma-coverage',
+            'coveralls',
             'karma-coveralls'
             ],
 
