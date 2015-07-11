@@ -4,24 +4,21 @@
 
 describe('search app', function() {
 
-
-  it('should automatically redirect to / when location hash/fragment is empty', function() {
+  beforeEach(function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/");
   });
 
-
-  describe('search', function() {
-
-    beforeEach(function() {
-      browser.get('/');
-    });
-
-
-    it('should render search when user navigates to /', function() {
-      expect(element.all(by.css('[ng-view] h1')).first().getText()).
+  it('should automatically redirect to / when location hash/fragment is empty', function() {
+    expect(browser.getLocationAbsUrl()).toMatch("/");
+    expect(element.all(by.css('[ui-view] h1')).first().getText()).
         toMatch(/Certification Search/);
-    });
+  });
 
+  it('should return results for people in Washington, DC', function() {
+    element(by.id('city')).sendKeys('Washington');
+    element(by.id('state')).sendKeys('DC');
+    element(by.id('submit')).click();
+
+    expect(element.all(by.css('tr')).count()).toBeGreaterThan(0);
   });
 });

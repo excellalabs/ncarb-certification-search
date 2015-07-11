@@ -3,7 +3,10 @@
 // Declare app level module which depends on views, and components
 angular.module('searchApp', [
   'ui.router',
+  'ngTable',
+  'darthwade.dwLoading',
   'searchApp.search',
+  'certificationsService'
 ])
 
 .run(['$rootScope', '$state', '$stateParams',

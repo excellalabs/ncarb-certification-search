@@ -1,34 +1,55 @@
 <h1>Certification Search</h1>
 
-<form class="form-horizontal" ng-submit="vm.submit()">
-    <div class="form-group">
-        <label for="firstName" class="col-sm-2 control-label">First Name</label>
-        <div class="col-sm-4">
-            <input type="text" class="form-control" id="firstName" ng-model="vm.filter.firstName"/>
-        </div>
+<div id="certificationList">
+    <form class="form-horizontal" ng-submit="vm.submit()">
+        <div class="form-group">
+            <label for="firstName" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="firstName" ng-model="vm.filter.firstName"/>
+            </div>
 
-        <label for="lastName" class="col-sm-2 control-label">Last Name</label>
-        <div class="col-sm-4">
-            <input type="text" class="form-control" id="lastName" ng-model="vm.filter.lastName"/>
+            <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="lastName" ng-model="vm.filter.lastName"/>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="city" class="col-sm-2 control-label">City</label>
-        <div class="col-sm-4">
-            <input type="text" class="form-control" id="city" ng-model="vm.filter.city"/>
-        </div>
+        <div class="form-group">
+            <label for="city" class="col-sm-2 control-label">City</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="city" ng-model="vm.filter.city"/>
+            </div>
 
-        <label for="state" class="col-sm-2 control-label">State</label>
-        <div class="col-sm-4">
-            <input type="text" class="form-control" id="state" ng-model="vm.filter.state"/>
+            <label for="state" class="col-sm-2 control-label">State</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="state" ng-model="vm.filter.stateCode"/>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary">Filter</button>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" id="submit" class="btn btn-primary">Filter</button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 
-<div id="results">
+    <div dw-loading="certifications">
+        <table ng-table="vm.tableParams" show-filter="false" class="table table-bordered table-striped row-border hover">
+            <tr ng-repeat="certification in $data">
+                <td data-title="'FirstName'">
+                    {{ certification.firstName }}
+                </td>
+                <td data-title="'Last Name'">
+                    {{ certification.lastName }}
+                </td>
+                <td data-title="'City'">
+                    {{ certification.city }}
+                </td>
+                <td data-title="'State'">
+                    {{ certification.stateCode }}
+                </td>
+                <td data-title="'Country'">
+                    {{ certification.countryCode }}
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

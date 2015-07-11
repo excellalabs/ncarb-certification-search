@@ -4,10 +4,15 @@ module.exports = function(config){
     basePath : './',
 
     files : [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/angular/angular.min.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
+      'app/bower_components/angular-resource/angular-resource.min.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/search/**/*.js'
+      'app/bower_components/ng-table/dist/ng-table.min.js',
+      'app/bower_components/spin.js/spin.js',
+      'app/bower_components/angular-loading/angular-loading.min.js',
+      'app/search/**/*.js',
+      'app/services/**/*.js'
     ],
 
     autoWatch : true,
