@@ -28,7 +28,7 @@ There are both unit and integration tests in this project.  All tests are writte
 
 ### Unit Tests
 
-The simlest way to run the unit tests is by running the command:
+The simplest way to run the unit tests is by running the command:
 
 ```
 npm test
